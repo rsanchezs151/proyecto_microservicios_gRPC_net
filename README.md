@@ -1,26 +1,30 @@
 # Pacagroup.Trade
 
-# // nota para la migración: 
-#    Directorio: D:\RCSSV2\crs_net\Pacagroup.Trade\src
-# Mode                 LastWriteTime         Length Name
-# d-----     25/02/2026  01:59 p. m.                Pacagroup.Trade.Application.Interfaces
-# d-----     25/02/2026  02:01 p. m.                Pacagroup.Trade.Application.UseCases
-# d-----     25/02/2026  04:46 p. m.                Pacagroup.Trade.Domain
-# d-----     25/02/2026  01:57 p. m.                Pacagroup.Trade.Infraestructure
-# d-----     04/03/2026  11:19 p. m.                Pacagroup.Trade.Persistence
-# d-----     04/03/2026  11:31 p. m.                Pacagroup.Trade.Service.gRPC
-# dotnet ef migrations add CreateInitialScheme -s Pacagroup.Trade.Service.gRPC -p Pacagroup.Trade.Persistence -o Migrations
+Este proyecto contiene la lógica de negocio y persistencia para el sistema Trade.
 
-# Primero se generaron los archivos de migracion con el comando anterior
+> **Nota para la migración:**  
+> Directorio de origen: `D:\RCSSV2\crs_net\Pacagroup.Trade\src`
 
-# dotnet ef database update -s Pacagroup.Trade.Service.gRPC -p Pacagroup.Trade.Persistence
+## 📂 Estructura del Proyecto
 
-# Con el comando anterior se actualiza la informacion pero ya en ña base de datos!
 
-# se agregaron campos y para actualizar los datos en la BD se hace con el siguiente comando, lo que cambia es basicamente el nombre de la migracion que se realiza con alusion al cambio realizado en este caso AlerOrderScheme
+| Modo | Última Modificación | Nombre del Módulo |
+| :--- | :--- | :--- |
+| `d-----` | 25/02/2026 | `Pacagroup.Trade.Application.Interfaces` |
+| `d-----` | 25/02/2026 | `Pacagroup.Trade.Application.UseCases` |
+| `d-----` | 25/02/2026 | `Pacagroup.Trade.Domain` |
+| `d-----` | 25/02/2026 | `Pacagroup.Trade.Infraestructure` |
+| `d-----` | 04/03/2026 | `Pacagroup.Trade.Persistence` |
+| `d-----` | 04/03/2026 | `Pacagroup.Trade.Service.gRPC` |
 
-# dotnet ef migrations add AlterOrderScheme -s Pacagroup.Trade.Service.gRPC -p Pacagroup.Trade.Persistence -o Migrations
+---
 
-# En este caso se compara con lo anterior y solo crea un archivo con los cambios realizados, despues aplicamos la migracion a la base de datos con el siguiente comando:
+## 🚀 Guía de Migraciones (Entity Framework Core)
 
-# dotnet ef database update -s Pacagroup.Trade.Service.gRPC -p Pacagroup.Trade.Persistence
+Sigue estos pasos para gestionar la base de datos desde la CLI de .NET.
+
+### 1. Creación del Esquema Inicial
+Para generar los archivos de migración base, ejecuta:
+
+```bash
+dotnet ef migrations add CreateInitialScheme -s Pacagroup.Trade.Service.gRPC -p Pacagroup.Trade.Persistence -o Migrations
