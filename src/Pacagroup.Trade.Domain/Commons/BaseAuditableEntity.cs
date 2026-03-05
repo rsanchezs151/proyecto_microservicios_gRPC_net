@@ -9,7 +9,7 @@ namespace Pacagroup.Trade.Domain.Commons
     public abstract class BaseAuditableEntity : BaseEntity
     {
 
-        public DateTime Create { get; set; }
+        public DateTime Created { get; set; }
 
         public string? CreateBy { get; set; }
 
